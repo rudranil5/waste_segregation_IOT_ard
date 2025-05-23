@@ -12,7 +12,7 @@ You can find the full project here: https://github.com/rudranil5/Smart-waste-Seg
 
 ## Our main objective was 
 ### To seggregate the objects into two parts Recyclabe and Non recyclabe automatically .
-** First the sensors will check weather the bin is full or not . If not then the input lid will open .**
+***First the sensors will check weather the bin is full or not . If not then the input lid will open .***
 ** Second the object is going to be detected by camera module then according to the respond it will go throung different sensors.
 ** And finally according to the result the lid of recyclable or non recyclabe lid is going to open
 
