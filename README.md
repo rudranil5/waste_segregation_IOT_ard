@@ -1,7 +1,7 @@
 # waste_segregation_IOT
 This is the IoT component of our Smart Waste Segregation project.
 
-This Part is  developed by Me.
+This Part is  developed by <a href="https://github.com/Exploretech-ankita"> Me </a>.
 
 We used an Arduino microcontroller to interface with and control all hardware components, including sensors, servos, and input modules.   
 You can find the full project here:  <b><a href="https://github.com/rudranil5/Smart-waste-Segregation">  Rudranil's Github  </a></b>
