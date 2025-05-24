@@ -24,9 +24,9 @@ void setup()
   servo1.attach(11);
   servo1.write(90);
   servo2.attach(3);
-  servo2.write(10);
+  servo2.write(20);
   servo3.attach(7);
-  servo3.write(10);
+  servo3.write(20);
   pinMode(smoke_detector, INPUT);
 
 }
@@ -35,35 +35,35 @@ void loop()
 {
   // put your main code here, to run repeatedly:
   digitalWrite(trig_pin,LOW);
-  delayMicroseconds(10);
+  delayMicroseconds(7);
   digitalWrite(trig_pin,HIGH);
-  delayMicroseconds(10);
+  delayMicroseconds(7);
   digitalWrite(trig_pin,LOW);
-  delayMicroseconds(10);
+  delayMicroseconds(7);
   duration = pulseIn(echo_pin,HIGH);
   distance = duration*0.034/2;
-  Serial.println("distance : ");
+  Serial.println("distance is : ");
   Serial.println(distance);
   Serial.println("\n");
-  delay(1000);
+  delay(900);
   int pin_Value_one;
   int pin_Value_two;
   pin_Value_one = digitalRead(ir1);
   Serial.println("1st IR value : ");
   Serial.println(pin_Value_one);
-  delay(1000);
+  delay(500);
   pin_Value_two = digitalRead(ir2);
   Serial.println("2nd IR value :");
   Serial.println(pin_Value_two);
-  delay(1000);
+  delay(500);
   int pin_Value_three = digitalRead(ir3);
   Serial.print("3rd IR value : ");
   Serial.println(pin_Value_three);
-  delay(1000);
+  delay(500);
   int pin_Value_four = digitalRead(ir4);
   Serial.println("4th IR value: ");
   Serial.println(pin_Value_four);
-  delay(1000);
+  delay(500);
   float moisture_percentage;
   int sensor_analog;
   sensor_analog = analogRead(moisture_sensor_pin);
@@ -78,7 +78,7 @@ void loop()
   Serial.println("\n");
   delay(1000);
   
-  if(distance < 20)
+  if(distance < 50)
   {
     if(pin_Value_one == 1 || pin_Value_two == 1 || pin_Value_three == 0 || pin_Value_four == 0)
     {
@@ -103,10 +103,10 @@ void loop()
        else if (received == '0') 
        {
           Serial.println("Received: Non-Recyclable (0)");
-          if(gas_sensor_read < 90)
+          if(gas_sensor_read < 100)
           {
             Serial.println(gas_sensor_read);
-            if(moisture_percentage < 150)
+            if(moisture_percentage < 250)
             {
               Serial.println("Recyclable");
               delay(1000);
